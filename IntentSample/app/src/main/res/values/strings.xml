@@ -4,5 +4,6 @@
     <string name="tv_thx_desc">以下のメニューのご注文を受付ました。\nご注文ありがとうございます。
     </string>
     <string name="tv_yen">円</string>
-    <string-array name="bt_thx_back">リストに戻る</string-array>
+    <string name="tv_menu">生姜焼き定食</string>
+    <string name="bt_thx_back">リストに戻る</string>
 </resources>
