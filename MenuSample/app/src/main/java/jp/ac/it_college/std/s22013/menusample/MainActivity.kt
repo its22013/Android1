@@ -3,6 +3,7 @@ package jp.ac.it_college.std.s22013.menusample
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
 
         initList(binding.lvMenu)
     }
@@ -29,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         view.layoutManager = layoutManager
         view.addItemDecoration(DividerItemDecoration(this, layoutManager.orientation))
+        registerForContextMenu(view)
     }
     private fun order(name: String, price: Int) {
         startActivity(Intent(this, MenuThanksActivity::class.java).apply {
@@ -58,4 +61,13 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+   /* override fun onCreateContextMenu(
+        menu: ContextMenu?,
+        v: View?,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+
+        menu?.setHeaderTitle(R.string.menu_list_context_header)
+    }*/
 }
